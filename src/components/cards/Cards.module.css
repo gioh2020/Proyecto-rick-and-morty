@@ -1,14 +1,14 @@
-.cardrick{
+/* .cardrick{
     
-    
+
+
     color: rgb(0, 0, 0);
     height: 550px;
     width: 400px;
-    align-items: stretch;
+    align-items: center; 
+    flex-direction: row;
 
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgb(177, 175, 175);
-    /* background: rgb(255, 255, 255); */
+    
     margin: 5px;
     box-shadow: 0 0 25px rgb(57, 255, 7);
     background: rgb(244, 246, 247);
@@ -36,11 +36,20 @@
     margin-block-end: 0ch;
     margin: 0;
 }
+ */
 
 
+.card{
+    /* display: flex;
+    flex-direction: column; */
 
-.body{
-    
     align-content: center;
     background-color: rgb(255, 255, 255);
+    margin: 5px;
+    box-shadow: 0 0 25px rgb(57, 255, 7);
+    background: rgb(244, 246, 247);
+    margin: 15px;
+    height: 550px;
+    width: 400px;
+   
 }

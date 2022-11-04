@@ -1,35 +1,25 @@
-import './App.css'
-import Card from './components/Card.jsx'
-import Cards from './components/Cards.jsx'
-import SearchBar from './components/SearchBar.jsx'
-import characters, { Rick } from './data.js'
+
+import Cards from './components/cards/Cards.jsx'
+import SearchBar from './components/searchBar/SearchBar.jsx'
+import characters from './data.js'
+import MundoRyM from './components/mundoR&M/MundoR&M.jsx'
 
 
 
 function App () {
   return (
-    <div className='App' style={{ padding: '25px', background: 'black' }}>
+    
+    <div className='App' style={{ padding: '25px', background: 'white' }}>
       <div>
-        <Card
-          name={Rick.name}
-          species={Rick.species}
-          gender={Rick.gender}
-          image={Rick.image}
-          onClose={() => window.alert('Emulamos que se cierra la card')}
-        />
+      <MundoRyM/>
+        <SearchBar onSearch={(characterID) => window.alert(characterID)}/>
       </div>
+    
       <hr />
       <div>
-        <Cards
-          characters={characters}
-        />
+        {/* <Cards characters={characters}/> */}
       </div>
       <hr />
-      <div>
-        <SearchBar
-          onSearch={(characterID) => window.alert(characterID)}
-        />
-      </div>
     </div>
   )
 }
