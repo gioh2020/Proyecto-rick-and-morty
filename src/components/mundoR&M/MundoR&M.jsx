@@ -1,25 +1,22 @@
 import React from "react";
 import Cards from "../cards/Cards.jsx"
-import { useState } from "react";
-import characters  from "../../data.js";
+// import { useState } from "react";
 
 
 
-function MundoRyM(){
-    const [mundoRyM, setMundoRyM] = useState({
-        character: [characters.characters],
-        
-        allcharacters:[]
 
-    })
+function MundoRyM(props){
+    console.log('esto 2' + props)
+    const {characters} = props
+   console.log('esto 3' + characters)
 
     return(
         <div>
-            <Cards characters={characters}/>
+            <Cards characters={characters} />
         </div>
     )
 }
-console.log(MundoRyM.character)
+
 
 
 

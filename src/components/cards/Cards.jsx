@@ -1,25 +1,25 @@
 import styles from "./Cards.module.css";
 
-export default function Cards(props) {
-   console.log(props)
-   return(
-      <div >
-      {
-        props.characters.map((e)=>{
-           return (
-            <div className={styles.card}>
-               <button onClick={e.onClose}>X</button>
-               <h2>{e.name}</h2>
-               <h2>{e.species}</h2>
-               <h2>{e.gender}</h2>
-               <img  src={e.image} alt="" /> 
+ function Cards(props) {
+   // const {characters} = props
 
-            </div>
-           )
+   return(
+       props.characters.map((character)=>{
+            return (
+               <div className={styles.card} key ={character.name}>
+                  {/* <button onClick={character.onClose}>X</button> */}
+                  <h2>{character.name}</h2>
+                  <h2>{character.species}</h2>
+                  <h2>{character.gender}</h2>
+                  <img  src={character.image} alt="" /> 
+               </div>
+            )
          })
-      }
-      </div>
+      
+      
    
 
    )
 }
+
+export default Cards
