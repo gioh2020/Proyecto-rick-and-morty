@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("../cardsImage.jpg");
+  background-size: 100vw 100vw;
+  /* border-left: 40px solid rgb(15, 15, 160); */
 }
 
 code {

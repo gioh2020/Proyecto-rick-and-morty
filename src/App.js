@@ -1,41 +1,70 @@
+import React from 'react';
 import Cards from './components/cards/Cards.jsx'
 import SearchBar from './components/searchBar/SearchBar.jsx'
-import MundoRyM from './components/mundoR&M/MundoR&M.jsx'
 import {useState} from 'react'
+import styles from "./components/cards/Cards.module.css";
+import {Route,  Routes, useLocation, useNavigate } from "react-router-dom"
+import InfoCharacter from './components/InfoChracter/InfoCharacter.jsx';
+import Login from './components/loging/Login.jsx';
+import NavBar from './components/nav/Nav.jsx';
+import rmo from './rym.png'
+import axios from 'axios';
+import { useSelector } from 'react-redux';
+import Favorites from "./components/favorites/Favorites"
 
 
 
 function App () {
+  const allCharacterss = useSelector((state)=> state.characters)
 
-  const [characters, setCharacters] = useState('')
-
-  function searchCharacters(userId){
-    console.log('este es tu id' +userId)
-    fetch(`https://rickandmortyapi.com/api/character/${userId}`) //${userId}
-      .then((response) => response.json())
-      .then((data) => {
-         if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);
-         } else {
-            window.alert('No hay personajes con ese ID');
-         }
-      });
+  const [characters, setCharacters] = useState(allCharacterss)
+  const [dataValidate, setDataValidate] = useState(false)
 
 
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const email = 'rickymorty@milkyway.co'
+  const password = 'rYm12*-*'
+
+  function userValidate(user){
+    if(user.email === email && user.password === password){
+      setDataValidate(true);
+      navigate('/home')
+    }
   }
-  
- console.log('esto 1 '+ characters )
+ 
+
+ 
 
   return (
-    <div className='App' style={{ padding: '25px', background: 'white' }}>
+    <div className='App' >
       <div>
-        <SearchBar searchCharacters={searchCharacters}/>
-        {/* <Cards characters = {characters}/> */}
-      </div>
-    
+        <img src={rmo} alt="" />
+        </div>
+
+      {location.pathname === '/' ? null:<NavBar/>}
+      {location.pathname === '/home' ? <SearchBar s />:null}
+
      
+
+      <Routes>
+        
+        <Route path='/home' element={<Cards 
+         className={styles.body}/>}/>
+
+        <Route path='/' element={<Login userValidate ={userValidate}/>}/>
+        <Route path='/favorites' element={<Favorites/>}/>
+
+        <Route path= "/infoCharacter/:id"
+         element={<InfoCharacter/>}/>
+
+      </Routes>
     </div>
+    
   )
 }
 
 export default App
+
+
