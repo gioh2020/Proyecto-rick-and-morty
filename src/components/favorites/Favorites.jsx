@@ -10,24 +10,15 @@ function Favorites(){
     const allCharacters = useSelector((state)=> state.favorites)
 
     const handleClick = (event) =>{
-      
         dispatch(delFavorite(parseInt(event.target.value)))
-
     }
     return(
         <div className={styles.cardsDiv}>
-           {
-        allCharacters?.map((character)=>{
+         {allCharacters?.map((character)=>{
               return (
-  
                     <div className={styles.card} key ={character.id}>
                        <div>
-                      
-                         
-                          <button value={character.id} name={character.id} className={styles.heartButton} onClick={handleClick}>❤️</button>
-                    
-                       
-                     
+                        <button value={character.id} name={character.id} className={styles.heartButton} onClick={handleClick}>❤️</button>
                        </div>
                        <NavLink  className={styles.textNames}to ={`/infoCharacter/${character.id}`}>
                           <h2 className={styles.textName}>{character.name}</h2> 
@@ -37,17 +28,11 @@ function Favorites(){
                        <h2 className={styles.textAttribute1}>{character.species}</h2>
                        <h2 className={styles.textAttribute}>{character.gender}</h2>
                     </div>
-                
-                )
+                 ) 
               })
-                 }
-  
-        
-        
-     
-  
-              </div>
-     )
+         }
+          </div>
+    )
   
   
 }

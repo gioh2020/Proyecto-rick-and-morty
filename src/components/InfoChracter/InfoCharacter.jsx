@@ -1,6 +1,7 @@
 import React from "react";
 import {useState, useEffect} from "react"
 import { useParams} from "react-router-dom"
+import styles from "./InfoCharacter.module.css"
 
 
 function InfoCharacter(){
@@ -24,19 +25,25 @@ function InfoCharacter(){
         return setAllInfo({});
      }, [id]);
      
-   
+   console.log(allInfo)
 
  
 
       return(
-        <div>
+        <div className={styles.divPrincipal}>
+         <div >
+          <img className={styles.divImg}  src={allInfo.image} alt="" /> 
+         </div>
+
+         <div className={styles.divInfo}>
+          <h1>ID: {id}</h1>      
+          <h1>Name: {allInfo.name}</h1>
+          <h1>Gender: {allInfo.gender}</h1>
+          <h1>Species: {allInfo.species}</h1>
+          <h1>Origin: {allInfo.location?.name}</h1>
+          <h1>Status: {allInfo.status}</h1>
+         </div>
             
-          <div>nombre {id}</div>      
-          <h1>Nombre: {allInfo.name}</h1>
-          <h1>Nombre: {allInfo.species}</h1>
-          <h1>origin: {allInfo.origin?.name}</h1>
-          <img  src={allInfo.image} alt="" /> 
-          <h1>Nombre: {allInfo.name}</h1>
           
         </div>
       )

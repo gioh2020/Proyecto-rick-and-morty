@@ -2,15 +2,14 @@ import React from 'react';
 import Cards from './components/cards/Cards.jsx'
 import SearchBar from './components/searchBar/SearchBar.jsx'
 import {useState} from 'react'
-import styles from "./components/cards/Cards.module.css";
 import {Route,  Routes, useLocation, useNavigate } from "react-router-dom"
 import InfoCharacter from './components/InfoChracter/InfoCharacter.jsx';
 import Login from './components/loging/Login.jsx';
 import NavBar from './components/nav/Nav.jsx';
 import rmo from './rym.png'
-import axios from 'axios';
 import { useSelector } from 'react-redux';
 import Favorites from "./components/favorites/Favorites"
+
 
 
 
@@ -39,9 +38,10 @@ function App () {
 
   return (
     <div className='App' >
-      <div>
+      
+      <div >
         <img src={rmo} alt="" />
-        </div>
+      </div>
 
       {location.pathname === '/' ? null:<NavBar/>}
       {location.pathname === '/home' ? <SearchBar s />:null}
@@ -51,7 +51,7 @@ function App () {
       <Routes>
         
         <Route path='/home' element={<Cards 
-         className={styles.body}/>}/>
+        />}/>
 
         <Route path='/' element={<Login userValidate ={userValidate}/>}/>
         <Route path='/favorites' element={<Favorites/>}/>

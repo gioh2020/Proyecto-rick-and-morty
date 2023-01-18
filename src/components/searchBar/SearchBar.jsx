@@ -4,6 +4,7 @@ import {useState} from "react"
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getCharacters } from "../../actions";
+import styles from "./SearchBar.module.css"
 
 
 
@@ -18,13 +19,13 @@ export default function SearchBar(props) {
 
 
 
-    const handleClick = ((event)=>{
+   const handleClick = ((event)=>{
       dispatch(getCharacters(userId))
       setTimeout(() => {
          navigate('/home')
       }, 800);
     })
-    const handleInput = ((event)=>{
+   const handleInput = ((event)=>{
       if(event.target.value > 826 ||  event.target.value < 1){
          return alert('Ingresa un valor entre 1 y 826')
       }
@@ -32,16 +33,13 @@ export default function SearchBar(props) {
       setUserId(event.target.value)
       
      })
-     const handleRandom =() =>{
-      const random = Math.ceil(Math.random()* 826)
-      console.log(typeof random)
+   const handleRandom =() =>{
+   const random = Math.ceil(Math.random()* 826)
       dispatch(getCharacters(random))
-
-
      }
 
    return (
-      <div>
+      <div className={styles.searchBar}>
 
          <input value={userId}  id="search" type='number' onChange={handleInput} placeholder={'Escribe un ID numerico'}/>
          <button onClick={handleClick}>Agregar por ID</button> 

@@ -1,0 +1,27 @@
+.navBar{
+    display: flex;
+    align-content: space-between;
+    border:2px solid rgb(9, 255, 0);
+    background-color:transparent;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    align-self: flex-start;
+    width: 95%;
+    justify-content: center;
+   
+    
+}
+.navLink{
+    border:2px solid rgb(9, 255, 0);
+    background-color: rgb(0, 203, 203);
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 800;
+    font-family: cursive;
+    height: 100%;
+   
+}

@@ -38,7 +38,7 @@ import {changeFav, deleteCharacters} from "../../actions"
             return (
 
                   <div className={styles.card} key ={character.id}>
-                     <div>
+                     <div className={styles.xh}>
                     
                         {character.fav ? (
                         <button value={true} name={character.id} className={styles.heartButton} onClick={handleFavorite}>❤️</button>):
