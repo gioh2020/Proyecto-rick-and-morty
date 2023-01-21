@@ -1,4 +1,13 @@
 .searchBar{
+    display: grid;
+    grid-template-columns: auto auto auto;
     border:2px solid yellow;
     background-color: aqua;
+    width: 250px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+
+    
 }

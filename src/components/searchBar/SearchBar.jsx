@@ -27,7 +27,7 @@ export default function SearchBar(props) {
     })
    const handleInput = ((event)=>{
       if(event.target.value > 826 ||  event.target.value < 1){
-         return alert('Ingresa un valor entre 1 y 826')
+         return setUserId('valor no valido')
       }
 
       setUserId(event.target.value)
@@ -41,8 +41,8 @@ export default function SearchBar(props) {
    return (
       <div className={styles.searchBar}>
 
-         <input value={userId}  id="search" type='number' onChange={handleInput} placeholder={'Escribe un ID numerico'}/>
-         <button onClick={handleClick}>Agregar por ID</button> 
+         <input value={userId}  id="search" type='number' onChange={handleInput} placeholder={'From 1 to 826'}/>
+         <button onClick={handleClick}>Ad by ID</button> 
          <button onClick={handleRandom}>Random</button>
 
       </div>

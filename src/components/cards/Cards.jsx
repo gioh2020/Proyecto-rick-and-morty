@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Cards.module.css";
 import {NavLink} from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import {changeFav, deleteCharacters} from "../../actions"
+import { useEffect } from "react";
 
 
 
@@ -14,9 +15,15 @@ import {changeFav, deleteCharacters} from "../../actions"
    const allCharacters = useSelector((state)=> state.characters)
    const dispatch = useDispatch()
 
+   const [flash, setFlash] = useState(false);
 
-
-   
+   useEffect(() => {
+      const intervalId = setInterval(() => {
+        setFlash(!flash);
+      }, 1000);
+      return () => clearInterval(intervalId);
+    }, [flash]);
+    
    function handleFavorite(event){ 
       if(event.target.value === "false") {
          const action = [event.target.name, event.target.value]
@@ -36,8 +43,9 @@ import {changeFav, deleteCharacters} from "../../actions"
          {
       allCharacters?.map((character)=>{
             return (
+               <div className={styles.card} key={character.id}>
 
-                  <div className={styles.card} key ={character.id}>
+                  {/* <div className={styles.card} key ={character.id}> */}
                      <div className={styles.xh}>
                     
                         {character.fav ? (
@@ -47,7 +55,7 @@ import {changeFav, deleteCharacters} from "../../actions"
                      <button value={character.id} onClick={handleClose} className={styles.close}>X</button>
                      </div>
                      <NavLink  className={styles.textNames}to ={`/infoCharacter/${character.id}`}>
-                        <h2 className={styles.textName}>{character.name}</h2> 
+                        <h2 className={`${styles.textName} ${flash ? styles.flash : ""}`}>{character.name}</h2> 
                      </NavLink>
                      <img className={styles.image} src={character.image} alt="" /> 
                      <hr className={styles.line} />
