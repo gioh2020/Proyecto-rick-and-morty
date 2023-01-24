@@ -8,7 +8,7 @@ import Login from './components/loging/Login.jsx';
 import NavBar from './components/nav/Nav.jsx';
 import rmo from './rym.png'
 import Favorites from "./components/favorites/Favorites"
-import About from './components/about/about.jsx';
+import About from './components/about/About.jsx';
 
 
 
