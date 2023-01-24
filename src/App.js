@@ -9,6 +9,8 @@ import NavBar from './components/nav/Nav.jsx';
 import rmo from './rym.png'
 import { useSelector } from 'react-redux';
 import Favorites from "./components/favorites/Favorites"
+import About from './components/about/about.jsx';
+
 
 
 
@@ -55,9 +57,8 @@ function App () {
 
         <Route path='/' element={<Login userValidate ={userValidate}/>}/>
         <Route path='/favorites' element={<Favorites/>}/>
-
-        <Route path= "/infoCharacter/:id"
-         element={<InfoCharacter/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path= "/infoCharacter/:id" element={<InfoCharacter/>}/>
 
       </Routes>
     </div>
