@@ -42,7 +42,7 @@ export default function SearchBar(props) {
       <div className={styles.searchBar}>
 
          <input value={userId}  id="search" type='number' onChange={handleInput} placeholder={'From 1 to 826'}/>
-         <button onClick={handleClick}>Ad by ID</button> 
+         <button onClick={handleClick}>Add by ID</button> 
          <button onClick={handleRandom}>Random</button>
 
       </div>

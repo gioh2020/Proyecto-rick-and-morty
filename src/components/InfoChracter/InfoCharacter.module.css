@@ -6,6 +6,7 @@
     width: 738px;
     height: 270px;
     animation: flash 1.5s linear infinite;
+    margin-top: 40px;
 }
 @media (max-width: 768px){
     .divPrincipal{
