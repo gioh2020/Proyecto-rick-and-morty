@@ -7,7 +7,6 @@ import InfoCharacter from './components/InfoChracter/InfoCharacter.jsx';
 import Login from './components/loging/Login.jsx';
 import NavBar from './components/nav/Nav.jsx';
 import rmo from './rym.png'
-import { useSelector } from 'react-redux';
 import Favorites from "./components/favorites/Favorites"
 import About from './components/about/about.jsx';
 
@@ -16,9 +15,7 @@ import About from './components/about/about.jsx';
 
 
 function App () {
-  const allCharacterss = useSelector((state)=> state.characters)
 
-  const [characters, setCharacters] = useState(allCharacterss)
   const [dataValidate, setDataValidate] = useState(false)
 
 
