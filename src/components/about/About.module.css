@@ -1,0 +1,199 @@
+.tecnologies{
+    display:flex ;
+    flex-direction: column;
+    align-items: center;
+}
+.tecnologies img{
+    height: 100px;
+    width: 150px;
+}
+.text{
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    width: 400px;
+    background-color: rgb(52, 78, 78);
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    border-radius: 10px;
+}
+.principalDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.imageDiv{
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 400px;
+}
+
+
+.cardsDiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
+.card{
+   
+    border-radius: 20px ;
+    box-shadow: 0 0 40px rgb(59, 255, 124);
+    /* background: rgb(244, 246, 247); */
+    margin: 25px;
+    height: 500px;
+    width: 300px;
+    background-image: url("/cardsImage.jpg");
+    background-size: 500px 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    
+   
+}
+
+.image{
+    height: 250px;
+    width: 250px;
+    border-radius: 15px;
+    margin: 15px;
+    border-right:4px solid rgb(246, 250, 135);
+    border-bottom: 4px solid rgb(246, 250, 135);
+ 
+    
+
+}
+
+.body{
+    display: flex;
+    flex-direction:row;
+    width: 100%;
+    background-image: url("/starry-night-sky.jpg");
+    background-size: 800px 800px;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+}
+.textName{
+    color: rgb(33, 179, 205);
+    border-radius: 10px ;
+    /* box-shadow: 0 0 25px rgb(221, 227, 121); */
+    text-align: center;
+    -webkit-text-stroke: 1.3px rgb(191, 254, 65);
+    margin: 1px;
+    margin-top: 15px;
+    width: 99.5%;
+    height: 70%;
+    vertical-align: middle;
+    display: table;
+    text-decoration: transparent;
+    overflow: hidden;
+ 
+   
+   
+}
+
+.flash {
+    animation: flash 1s linear infinite;
+  }
+@keyframes flash {
+    0% {
+      box-shadow: none;
+    }
+    25% {
+        box-shadow: 0 0 10px  rgb(93, 248, 88);
+      }
+    
+    50% {
+      box-shadow: 0 0 30px  rgb(9, 255, 0);
+    }
+    100% {
+      box-shadow:0 0 10px  rgb(9, 255, 0);
+    }
+  }
+.textNames{
+    text-decoration: none;
+   
+}
+.textAttribute1{
+    color: azure;
+    border-radius: 20px ;
+    box-shadow: 0 0 25px rgb(148, 250, 92);
+    text-align: center;
+    -webkit-text-stroke: 1.3px rgb(206, 210, 125);
+    margin: 5px;
+    margin-top: 15px;
+    vertical-align: middle;
+    width: 150px;
+    height: 30px;
+    vertical-align: middle;
+    display: table;
+    
+    font-size: 130% ;
+    font-size-adjust: inherit;
+    margin-top: 9px;
+  
+
+}
+
+.textAttribute{
+    color: azure;
+    border-radius: 20px ;
+    box-shadow: 0 0 25px rgb(148, 250, 92);
+    text-align: center;
+    -webkit-text-stroke: 1.3px rgb(206, 210, 125);
+    margin: 5px;
+    margin-top: 15px;
+    vertical-align: middle;
+    width: 150px;
+    height: 30px;
+    vertical-align: middle;
+    display: table;
+    
+    font-size: 130% ;
+    font-size-adjust: inherit;
+    margin-bottom: 5px;
+    margin-top: 5px;
+
+}
+.line{
+    width: 100%;
+    
+}
+
+.close{
+    border-radius: 15px;
+    background-color: brown;
+    margin-top: 8px;
+    height: 20px;
+}
+.heartButton{
+    height: 15px;
+    padding: 0px;
+  
+    text-align: center;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    vertical-align: middle;
+    font-weight: bold;
+    cursor: pointer;
+}
+.xh{
+    display: flex;
+    height: 25px;
+    align-self: flex-end;
+    margin-right: 8px;
+}
+
+button{
+    background-color: rgb(234, 233, 129);
+    cursor: pointer;
+    border-radius: 10px;
+
+}
+input{
+    border-radius: 10px;
+    width: 100px;
+}
